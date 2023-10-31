@@ -1,7 +1,7 @@
 fn char_to_i64(char_option: Option<char>) -> Option<i64> {
     char_option
-        .and_then(|c| c.to_digit(10)) // Convert char to Option<u32>
-        .map(|num| num as i64) // Cast u32 to i64
+        .and_then(|c| c.to_digit(10))
+        .map(|num| num as i64)
 }
 
 fn main() {
@@ -18,7 +18,6 @@ fn main() {
         }
         let mut current = 1;
         for n in start..end + 1 {
-            // Convert Option<char> to Option<i32>
             let number = char_to_i64(digits.chars().nth(n));
             let digit = number.unwrap_or(0);
 

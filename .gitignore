@@ -1,6 +1,6 @@
 # Compiled files
-/target/
-/debug/
+target/
+debug/
 
 # Rust specific
 **/*.rs.bk
