@@ -1,3 +1,4 @@
+#[allow(dead_code)]
 pub fn execute() {
     let limit = 2000000;
     let mut primes: Vec<i64> = Vec::new();
