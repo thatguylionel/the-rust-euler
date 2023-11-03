@@ -34,9 +34,29 @@ pub fn execute() {
     // up, down, left, right, diagonally
     let mut result = horizontal(combined.clone());
     println!("Row {} : Sum: {}", result.0, result.1);
+    let mut winning_row = result.0;
+    let mut high_score = result.1;
+
+
 
     result = vertical(combined.clone());
     println!("Row {} : Sum: {}", result.0, result.1);
+    let mut result_row = result.0;
+    let mut result_score = result.1;
+
+    if result_score > high_score {
+        winning_row = result_row;
+        high_score = result_score;
+    }
+
+    result = diagonal(combined.clone());
+
+
+    println!("Final Row {} : Sum: {}", winning_row, high_score);
+}
+
+fn diagonal(combined: Vec<Vec<i32>>) -> (i32, i32) {
+    todo!()
 }
 
 fn vertical(combined: Vec<Vec<i32>>) -> (i32, i32) {
@@ -60,6 +80,7 @@ fn vertical(combined: Vec<Vec<i32>>) -> (i32, i32) {
     }
 
     for row in new_list.iter() {
+        //  println!("{:?}", row);
         let current = get_result(row.to_vec(), row.iter().copied().rev().collect());
         if high_score < current {
             winning_row = current_row;
